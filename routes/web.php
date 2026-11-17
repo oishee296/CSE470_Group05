@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FamilyProfileController;
 use App\Http\Controllers\WarehouseController;
+use App\Http\Controllers\DonationController;
 use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/login');
@@ -32,7 +33,6 @@ Route::middleware(['auth', 'role:citizen'])
     });
 
 // ---------- (Teammates: add your feature routes in your own section below) ----------
-
 // ---------- F11: Warehouse Hub Management ----------
 Route::middleware(['auth', 'role:logistics_manager'])->group(function () {
 
@@ -56,5 +56,19 @@ Route::middleware(['auth', 'role:logistics_manager'])->group(function () {
     // Locker Assignments
     Route::get('/locker-assignments/create', [WarehouseController::class, 'createLockerAssignment'])->name('locker-assignment.create');
     Route::post('/locker-assignments', [WarehouseController::class, 'storeLockerAssignment'])->name('locker-assignment.store');
+});
 
+// ---------- R6: Supply Donation Logistics ----------
+Route::middleware('auth')->group(function () {
+    Route::get('/donations', [DonationController::class, 'index'])
+        ->name('donations.index');
+
+    Route::get('/donations/create', [DonationController::class, 'create'])
+        ->name('donations.create');
+
+    Route::post('/donations', [DonationController::class, 'store'])
+        ->name('donations.store');
+
+    Route::get('/donations/{donation}/receipt', [DonationController::class, 'receipt'])
+        ->name('donations.receipt');
 });
