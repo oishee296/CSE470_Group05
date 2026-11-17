@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FamilyProfileController;
+use App\Http\Controllers\DonationController;
 use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/login');
@@ -31,3 +32,17 @@ Route::middleware(['auth', 'role:citizen'])
     });
 
 // ---------- (Teammates: add your feature routes in your own section below) ----------
+// ---------- R6: Supply Donation Logistics ----------
+Route::middleware('auth')->group(function () {
+    Route::get('/donations', [DonationController::class, 'index'])
+        ->name('donations.index');
+
+    Route::get('/donations/create', [DonationController::class, 'create'])
+        ->name('donations.create');
+
+    Route::post('/donations', [DonationController::class, 'store'])
+        ->name('donations.store');
+
+    Route::get('/donations/{donation}/receipt', [DonationController::class, 'receipt'])
+        ->name('donations.receipt');
+});
