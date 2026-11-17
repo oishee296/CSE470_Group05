@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FamilyProfileController;
+use App\Http\Controllers\WarehouseController;
 use App\Http\Controllers\DonationController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +33,31 @@ Route::middleware(['auth', 'role:citizen'])
     });
 
 // ---------- (Teammates: add your feature routes in your own section below) ----------
+// ---------- F11: Warehouse Hub Management ----------
+Route::middleware(['auth', 'role:logistics_manager'])->group(function () {
+
+    // Warehouse
+    Route::get('/warehouse', [WarehouseController::class, 'index'])->name('warehouse.index');
+    Route::get('/warehouse/create', [WarehouseController::class, 'create'])->name('warehouse.create');
+    Route::post('/warehouse', [WarehouseController::class, 'store'])->name('warehouse.store');
+
+    // Inventory
+    Route::get('/inventory/create', [WarehouseController::class, 'createInventory'])->name('inventory.create');
+    Route::post('/inventory', [WarehouseController::class, 'storeInventory'])->name('inventory.store');
+
+    // Incoming Assets
+    Route::get('/incoming-assets/create', [WarehouseController::class, 'createIncomingAsset'])->name('incoming-asset.create');
+    Route::post('/incoming-assets', [WarehouseController::class, 'storeIncomingAsset'])->name('incoming-asset.store');
+
+    // Storage Lockers
+    Route::get('/lockers/create', [WarehouseController::class, 'createLocker'])->name('locker.create');
+    Route::post('/lockers', [WarehouseController::class, 'storeLocker'])->name('locker.store');
+
+    // Locker Assignments
+    Route::get('/locker-assignments/create', [WarehouseController::class, 'createLockerAssignment'])->name('locker-assignment.create');
+    Route::post('/locker-assignments', [WarehouseController::class, 'storeLockerAssignment'])->name('locker-assignment.store');
+});
+
 // ---------- R6: Supply Donation Logistics ----------
 Route::middleware('auth')->group(function () {
     Route::get('/donations', [DonationController::class, 'index'])
