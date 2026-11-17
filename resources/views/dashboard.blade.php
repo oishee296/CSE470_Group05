@@ -15,8 +15,22 @@
                 </div>
             </div>
         </div>
-    @else
-        <div class="col-12"><div class="alert alert-info">Your role's features will appear here as they are built.</div></div>
-    @endif
+    @elseif (auth()->user()->role === 'logistics_manager')
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5>Warehouse Hub Management</h5>
+                <p>Manage warehouses, inventory, incoming assets and storage lockers.</p>
+                <a href="{{ route('warehouse.index') }}" class="btn btn-danger">Open</a>
+            </div>
+        </div>
+    </div>
+@else
+    <div class="col-12">
+        <div class="alert alert-info">
+            Your role's features will appear here as they are built.
+        </div>
+    </div>
+@endif
 </div>
 @endsection
