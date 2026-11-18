@@ -1,0 +1,9 @@
+id,disaster_name,zone,request_type,description,priority,status,created_at,resolved_at
+101,2024 Eastern Bangladesh Flood,Feni,Rescue,Elderly people trapped in a flooded house,Urgent,Pending,2024-08-25 01:00:00,
+102,2024 Eastern Bangladesh Flood,Noakhali,Food,Family needs emergency food supplies,High,Pending,2024-08-25 05:00:00,
+103,2024 Eastern Bangladesh Flood,Cumilla,Medical,Patient needs urgent medicine,High,In Progress,2024-08-25 07:00:00,
+104,2024 Eastern Bangladesh Flood,Feni,Shelter,Family needs temporary shelter,Medium,Pending,2024-08-25 09:00:00,
+105,2024 Eastern Bangladesh Flood,Noakhali,Water,Drinking water required for a shelter,Medium,Resolved,2024-08-25 02:00:00,2024-08-25 06:00:00
+106,2024 Eastern Bangladesh Flood,Lakshmipur,Rescue,People stranded on a rooftop,Urgent,Pending,2024-08-25 03:00:00,
+107,2024 Eastern Bangladesh Flood,Cumilla,Food,Food packages requested for displaced people,Low,Pending,2024-08-25 10:00:00,
+108,2024 Eastern Bangladesh Flood,Feni,Medical,First-aid supplies needed,High,Resolved,2024-08-25 04:00:00,2024-08-25 08:30:00

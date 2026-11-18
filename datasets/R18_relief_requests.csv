@@ -1,0 +1,9 @@
+id,disaster_name,zone,resource_name,quantity_requested,priority,status,created_at
+1,2024 Eastern Bangladesh Flood,Feni,Food Packages,200,High,Pending,2024-08-25 08:00:00
+2,2024 Eastern Bangladesh Flood,Feni,Water Bottles,500,High,Pending,2024-08-25 08:30:00
+3,2024 Eastern Bangladesh Flood,Noakhali,Food Packages,300,Urgent,Pending,2024-08-25 09:00:00
+4,2024 Eastern Bangladesh Flood,Noakhali,Blankets,150,Medium,Pending,2024-08-25 09:30:00
+5,2024 Eastern Bangladesh Flood,Feni,Food Packages,100,Medium,Pending,2024-08-25 10:00:00
+6,2024 Eastern Bangladesh Flood,Cumilla,Water Bottles,250,High,In Progress,2024-08-25 10:30:00
+7,2024 Eastern Bangladesh Flood,Lakshmipur,Oral Saline,400,Urgent,Pending,2024-08-25 11:00:00
+8,2024 Eastern Bangladesh Flood,Feni,Blankets,80,Low,Resolved,2024-08-25 11:30:00
