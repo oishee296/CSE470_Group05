@@ -1,0 +1,8 @@
+id,disaster_name,zone,resource_name,quantity_in_stock
+1,2024 Eastern Bangladesh Flood,Feni,Food Packages,150
+2,2024 Eastern Bangladesh Flood,Feni,Water Bottles,600
+3,2024 Eastern Bangladesh Flood,Noakhali,Food Packages,200
+4,2024 Eastern Bangladesh Flood,Noakhali,Blankets,100
+5,2024 Eastern Bangladesh Flood,Cumilla,Water Bottles,300
+6,2024 Eastern Bangladesh Flood,Lakshmipur,Oral Saline,250
+7,2024 Eastern Bangladesh Flood,Feni,Blankets,100
